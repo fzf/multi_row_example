@@ -65,3 +65,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "datagrid", "~> 1.8"
+gem "kaminari"
+
+gem "sassc", "~> 2.4"
