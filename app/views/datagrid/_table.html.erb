@@ -9,9 +9,14 @@ Local variables:
     <thead>
       <%= datagrid_header(grid, options) %>
     </thead>
-    <tbody>
       <% if assets.any? %>
-        <%= datagrid_rows(grid, assets, **options) %>
+       <% @grid.assets.each do |asset| %>
+          <% @grid.tiers.each do |tier| %>
+            <tbody class="js-tier" data-tier="<%= tier %>" >
+              <%= datagrid_row(grid, asset, columns: grid.columns_by_tier(tier).map(&:name)) %>
+            </tbody>
+          <% end %>
+        <% end %>
       <% else %>
         <tr><td class="noresults" colspan="100%"><%= I18n.t('datagrid.no_results').html_safe %></td></tr>
       <% end %>
