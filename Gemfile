@@ -70,3 +70,5 @@ gem "datagrid", "~> 1.8"
 gem "kaminari"
 
 gem "sassc", "~> 2.4"
+
+gem "pry-rails", "~> 0.3.9"
